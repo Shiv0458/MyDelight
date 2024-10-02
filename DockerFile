@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package
 
 FROM openjdk:17.0.1-jdk-slim
-COPY --from=build/target/MyDelight-1.0-SNAPSHOT.jar MyDelight.jar
+COPY --from=build build/target/MyDelight-1.0-SNAPSHOT.jar MyDelight.jar
 ENTRYPOINT ["java", "-jar", "MyDelight.jar"]
 EXPOSE 8080

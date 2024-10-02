@@ -5,8 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @SpringBootApplication
+@RequestMapping("/test")
 public class MyDelight extends SpringBootServletInitializer {
 
 
@@ -18,6 +20,11 @@ public class MyDelight extends SpringBootServletInitializer {
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder){
 		return builder.sources(MyDelight.class);
+	}
+
+	@GetMapping("/get")
+	public String getResult(){
+		return "Success...";
 	}
 
 }
