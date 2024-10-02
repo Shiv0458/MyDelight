@@ -15,6 +15,22 @@ public class SmsRequest {
 
     private String trailNumber;
 
+    public @NotBlank String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(@NotBlank String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getTrailNumber() {
+        return trailNumber;
+    }
+
+    public void setTrailNumber(String trailNumber) {
+        this.trailNumber = trailNumber;
+    }
+
     @Override
     public String toString() {
         return "SmsRequest{" +
